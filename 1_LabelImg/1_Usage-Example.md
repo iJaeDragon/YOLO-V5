@@ -7,3 +7,14 @@
 
 ![image](https://github.com/user-attachments/assets/0d275691-f103-4056-9736-9a510ef36e3f)
 
+## Usage
+
+### labelImg 실행
+
+```
+  python labelimg.py
+```
+
+### classes 목록 확인
+
+![image](https://github.com/user-attachments/assets/fe67919c-a44d-4418-a76f-869e90d7998b)
