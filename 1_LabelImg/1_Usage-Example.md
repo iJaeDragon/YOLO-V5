@@ -37,7 +37,7 @@
 
 ![image](https://github.com/user-attachments/assets/11f64ffe-0bd1-47bb-be89-68b8ba256d6f)
 
-#### 
+#### label 지정
 
 ![image](https://github.com/user-attachments/assets/1f45884c-5f44-4798-813b-5aee8dc5e90c)
 
