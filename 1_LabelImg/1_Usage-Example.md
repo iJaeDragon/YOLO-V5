@@ -36,3 +36,9 @@
 ![image](https://github.com/user-attachments/assets/11f64ffe-0bd1-47bb-be89-68b8ba256d6f)
 
 ![image](https://github.com/user-attachments/assets/1f45884c-5f44-4798-813b-5aee8dc5e90c)
+
+### 6.Save
+
+![image](https://github.com/user-attachments/assets/9c1f2b47-8dd3-4c9f-8bce-3a9fdac2937f)
+
+![image](https://github.com/user-attachments/assets/fe04851f-e3a9-459c-9c35-b16e752ad4fe)
