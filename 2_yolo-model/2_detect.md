@@ -20,3 +20,5 @@ python detect.py --weights ./runs/train/yolo_custom_model3/weights/best.pt --img
 ```
 
 ![IMG_0264_JPG rf 67ec2a63bc2de6709559c9d458b18733](https://github.com/user-attachments/assets/2769f3e5-f4c2-45f1-b5f9-0585be7f68a7)
+
+### class 정보를 잘못 설정하여 cat이라고 뜨고 있지만 apple이다.
