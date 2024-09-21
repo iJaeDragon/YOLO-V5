@@ -283,7 +283,7 @@
 <details>
     <summary>커스텀 구조</summary>
 
-    ```
+  ```
       C:.
       │  data.yaml
       │  detect.py # 감지 스크립트
@@ -457,6 +457,10 @@
       └─__pycache__
               export.cpython-39.pyc
               val.cpython-39.pyc
-  ```
+```
 
 </details>
+
+[yolo-model-v5.zip](https://github.com/user-attachments/files/17084460/yolo-model-v5.zip)
+
+
