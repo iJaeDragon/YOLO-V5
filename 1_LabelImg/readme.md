@@ -4,3 +4,5 @@
 
 labelImg는 XML(Pascal VOC), TXT(YOLO) 등의 형식으로 라벨을 저장할 수 있어 다양한 객체 탐지 모델에서 사용할 수 있고, 주로 바운딩 박스(annotation bounding boxes)를 사용하여 객체를 라벨링하는 데 최적화되어 있다.<br/>
 기본적인 라벨링 기능 제공과 간단하게 사용할 수 있기에 labelImg를 사용했다.
+
+VIA는 폴리곤 라벨링을 할때 많이 사용한다.
