@@ -285,7 +285,7 @@
 
   ```
       C:.
-      │  data.yaml
+      │  data.yaml # 데이터 구성 파일
       │  detect.py # 감지 스크립트
       │  export.py
       │  requirements.txt
@@ -463,4 +463,7 @@
 
 [yolo-model-v5.zip](https://github.com/user-attachments/files/17084460/yolo-model-v5.zip)
 
+## 작업이 필요한 것
 
+### data.yml 에서 클래스 정보와 학습시 사용할 이미지 경로를 설정한다.
+### 설정한 이미지 경로에 학습할 이미지와 
