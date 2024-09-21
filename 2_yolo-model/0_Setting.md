@@ -278,182 +278,185 @@
 
 </details>
 
-조금 구조가 복잡하고 사용하지 않는 파일이 있기 때문에 필요한 부분만 남기고 사용하였다.
+### 조금 구조가 복잡하고 사용하지 않는 파일이 있기 때문에 필요한 부분만 남기고 사용하였다.
 
-```
-  C:.
-  │  data.yaml
-  │  detect.py
-  │  export.py
-  │  requirements.txt
-  │  train.py
-  │  val.py
-  │
-  ├─data
-  │  ├─hyps
-  │  │      hyp.no-augmentation.yaml
-  │  │      hyp.Objects365.yaml
-  │  │      hyp.scratch-high.yaml
-  │  │      hyp.scratch-low.yaml
-  │  │      hyp.scratch-med.yaml
-  │  │      hyp.VOC.yaml
-  │  │
-  │  ├─images
-  │  │  ├─train
-  │  │  │
-  │  │  └─val
-  │  │
-  │  └─labels
-  │      │  train.cache
-  │      │  val.cache
-  │      │
-  │      ├─train
-  │      │
-  │      └─val
-  │
-  ├─models
-  │  │  common.py
-  │  │  experimental.py
-  │  │  tf.py
-  │  │  yolo.py
-  │  │  yolov5l.yaml
-  │  │  yolov5m.yaml
-  │  │  yolov5n.yaml
-  │  │  yolov5s.yaml
-  │  │  yolov5x.yaml
-  │  │  __init__.py
-  │  │
-  │  ├─hub
-  │  │      anchors.yaml
-  │  │      yolov3-spp.yaml
-  │  │      yolov3-tiny.yaml
-  │  │      yolov3.yaml
-  │  │      yolov5-bifpn.yaml
-  │  │      yolov5-fpn.yaml
-  │  │      yolov5-p2.yaml
-  │  │      yolov5-p34.yaml
-  │  │      yolov5-p6.yaml
-  │  │      yolov5-p7.yaml
-  │  │      yolov5-panet.yaml
-  │  │      yolov5l6.yaml
-  │  │      yolov5m6.yaml
-  │  │      yolov5n6.yaml
-  │  │      yolov5s-ghost.yaml
-  │  │      yolov5s-LeakyReLU.yaml
-  │  │      yolov5s-transformer.yaml
-  │  │      yolov5s6.yaml
-  │  │      yolov5x6.yaml
-  │  │
-  │  ├─segment
-  │  │      yolov5l-seg.yaml
-  │  │      yolov5m-seg.yaml
-  │  │      yolov5n-seg.yaml
-  │  │      yolov5s-seg.yaml
-  │  │      yolov5x-seg.yaml
-  │  │
-  │  └─__pycache__
-  │          common.cpython-39.pyc
-  │          experimental.cpython-39.pyc
-  │          yolo.cpython-39.pyc
-  │          __init__.cpython-39.pyc
-  │
-  ├─runs
-  ├─utils
-  │  │  activations.py
-  │  │  augmentations.py
-  │  │  autoanchor.py
-  │  │  autobatch.py
-  │  │  callbacks.py
-  │  │  dataloaders.py
-  │  │  downloads.py
-  │  │  general.py
-  │  │  loss.py
-  │  │  metrics.py
-  │  │  plots.py
-  │  │  torch_utils.py
-  │  │  triton.py
-  │  │  __init__.py
-  │  │
-  │  ├─aws
-  │  │      mime.sh
-  │  │      resume.py
-  │  │      userdata.sh
-  │  │      __init__.py
-  │  │
-  │  ├─docker
-  │  │      Dockerfile
-  │  │      Dockerfile-arm64
-  │  │      Dockerfile-cpu
-  │  │
-  │  ├─flask_rest_api
-  │  │      example_request.py
-  │  │      README.md
-  │  │      restapi.py
-  │  │
-  │  ├─google_app_engine
-  │  │      additional_requirements.txt
-  │  │      app.yaml
-  │  │      Dockerfile
-  │  │
-  │  ├─loggers
-  │  │  │  __init__.py
-  │  │  │
-  │  │  ├─clearml
-  │  │  │  │  clearml_utils.py
-  │  │  │  │  hpo.py
-  │  │  │  │  README.md
-  │  │  │  │  __init__.py
-  │  │  │  │
-  │  │  │  └─__pycache__
-  │  │  │          clearml_utils.cpython-39.pyc
-  │  │  │          __init__.cpython-39.pyc
-  │  │  │
-  │  │  ├─comet
-  │  │  │  │  comet_utils.py
-  │  │  │  │  hpo.py
-  │  │  │  │  optimizer_config.json
-  │  │  │  │  README.md
-  │  │  │  │  __init__.py
-  │  │  │  │
-  │  │  │  └─__pycache__
-  │  │  │          comet_utils.cpython-39.pyc
-  │  │  │          __init__.cpython-39.pyc
-  │  │  │
-  │  │  ├─wandb
-  │  │  │  │  wandb_utils.py
-  │  │  │  │  __init__.py
-  │  │  │  │
-  │  │  │  └─__pycache__
-  │  │  │          wandb_utils.cpython-39.pyc
-  │  │  │          __init__.cpython-39.pyc
-  │  │  │
-  │  │  └─__pycache__
-  │  │          __init__.cpython-39.pyc
-  │  │
-  │  ├─segment
-  │  │      augmentations.py
-  │  │      dataloaders.py
-  │  │      general.py
-  │  │      loss.py
-  │  │      metrics.py
-  │  │      plots.py
-  │  │      __init__.py
-  │  │
-  │  └─__pycache__
-  │          augmentations.cpython-39.pyc
-  │          autoanchor.cpython-39.pyc
-  │          autobatch.cpython-39.pyc
-  │          callbacks.cpython-39.pyc
-  │          dataloaders.cpython-39.pyc
-  │          downloads.cpython-39.pyc
-  │          general.cpython-39.pyc
-  │          loss.cpython-39.pyc
-  │          metrics.cpython-39.pyc
-  │          plots.cpython-39.pyc
-  │          torch_utils.cpython-39.pyc
-  │          __init__.cpython-39.pyc
-  │
-  └─__pycache__
-          export.cpython-39.pyc
-          val.cpython-39.pyc
-```
+<details>
+    <summary>커스텀 구조</summary>
+
+    ```
+      C:.
+      │  data.yaml
+      │  detect.py # 감지 스크립트
+      │  export.py
+      │  requirements.txt
+      │  train.py # 학습 스크립트
+      │  val.py
+      │
+      ├─data # 학습할때 사용할 데이터
+      │  ├─hyps
+      │  │      hyp.no-augmentation.yaml
+      │  │      hyp.Objects365.yaml
+      │  │      hyp.scratch-high.yaml
+      │  │      hyp.scratch-low.yaml
+      │  │      hyp.scratch-med.yaml
+      │  │      hyp.VOC.yaml
+      │  │
+      │  ├─images
+      │  │  ├─train # 학습할 이미지
+      │  │  │
+      │  │  └─val # 검증할 이미지
+      │  │
+      │  └─labels
+      │      │
+      │      ├─train # 학습할 이미지의 객체 바운딩 박스 영역
+      │      │
+      │      └─val # 검증할 이미지의 객체 바운등 박스 영역
+      │
+      ├─models
+      │  │  common.py
+      │  │  experimental.py
+      │  │  tf.py
+      │  │  yolo.py
+      │  │  yolov5l.yaml
+      │  │  yolov5m.yaml
+      │  │  yolov5n.yaml
+      │  │  yolov5s.yaml
+      │  │  yolov5x.yaml
+      │  │  __init__.py
+      │  │
+      │  ├─hub
+      │  │      anchors.yaml
+      │  │      yolov3-spp.yaml
+      │  │      yolov3-tiny.yaml
+      │  │      yolov3.yaml
+      │  │      yolov5-bifpn.yaml
+      │  │      yolov5-fpn.yaml
+      │  │      yolov5-p2.yaml
+      │  │      yolov5-p34.yaml
+      │  │      yolov5-p6.yaml
+      │  │      yolov5-p7.yaml
+      │  │      yolov5-panet.yaml
+      │  │      yolov5l6.yaml
+      │  │      yolov5m6.yaml
+      │  │      yolov5n6.yaml
+      │  │      yolov5s-ghost.yaml
+      │  │      yolov5s-LeakyReLU.yaml
+      │  │      yolov5s-transformer.yaml
+      │  │      yolov5s6.yaml
+      │  │      yolov5x6.yaml
+      │  │
+      │  ├─segment # 다양한 크기의 모델 제공
+      │  │      yolov5l-seg.yaml # Large
+      │  │      yolov5m-seg.yaml # Medium
+      │  │      yolov5n-seg.yaml # Nano
+      │  │      yolov5s-seg.yaml # Small
+      │  │      yolov5x-seg.yaml # Extra Large 
+      │  │
+      │  └─__pycache__
+      │          common.cpython-39.pyc
+      │          experimental.cpython-39.pyc
+      │          yolo.cpython-39.pyc
+      │          __init__.cpython-39.pyc
+      │
+      ├─runs # 실행 결과가 저장되는 경로
+      ├─utils # 필수 유틸
+      │  │  activations.py
+      │  │  augmentations.py
+      │  │  autoanchor.py
+      │  │  autobatch.py
+      │  │  callbacks.py
+      │  │  dataloaders.py
+      │  │  downloads.py
+      │  │  general.py
+      │  │  loss.py
+      │  │  metrics.py
+      │  │  plots.py
+      │  │  torch_utils.py
+      │  │  triton.py
+      │  │  __init__.py
+      │  │
+      │  ├─aws
+      │  │      mime.sh
+      │  │      resume.py
+      │  │      userdata.sh
+      │  │      __init__.py
+      │  │
+      │  ├─docker
+      │  │      Dockerfile
+      │  │      Dockerfile-arm64
+      │  │      Dockerfile-cpu
+      │  │
+      │  ├─flask_rest_api
+      │  │      example_request.py
+      │  │      README.md
+      │  │      restapi.py
+      │  │
+      │  ├─google_app_engine
+      │  │      additional_requirements.txt
+      │  │      app.yaml
+      │  │      Dockerfile
+      │  │
+      │  ├─loggers
+      │  │  │  __init__.py
+      │  │  │
+      │  │  ├─clearml
+      │  │  │  │  clearml_utils.py
+      │  │  │  │  hpo.py
+      │  │  │  │  README.md
+      │  │  │  │  __init__.py
+      │  │  │  │
+      │  │  │  └─__pycache__
+      │  │  │          clearml_utils.cpython-39.pyc
+      │  │  │          __init__.cpython-39.pyc
+      │  │  │
+      │  │  ├─comet
+      │  │  │  │  comet_utils.py
+      │  │  │  │  hpo.py
+      │  │  │  │  optimizer_config.json
+      │  │  │  │  README.md
+      │  │  │  │  __init__.py
+      │  │  │  │
+      │  │  │  └─__pycache__
+      │  │  │          comet_utils.cpython-39.pyc
+      │  │  │          __init__.cpython-39.pyc
+      │  │  │
+      │  │  ├─wandb
+      │  │  │  │  wandb_utils.py
+      │  │  │  │  __init__.py
+      │  │  │  │
+      │  │  │  └─__pycache__
+      │  │  │          wandb_utils.cpython-39.pyc
+      │  │  │          __init__.cpython-39.pyc
+      │  │  │
+      │  │  └─__pycache__
+      │  │          __init__.cpython-39.pyc
+      │  │
+      │  ├─segment
+      │  │      augmentations.py
+      │  │      dataloaders.py
+      │  │      general.py
+      │  │      loss.py
+      │  │      metrics.py
+      │  │      plots.py
+      │  │      __init__.py
+      │  │
+      │  └─__pycache__
+      │          augmentations.cpython-39.pyc
+      │          autoanchor.cpython-39.pyc
+      │          autobatch.cpython-39.pyc
+      │          callbacks.cpython-39.pyc
+      │          dataloaders.cpython-39.pyc
+      │          downloads.cpython-39.pyc
+      │          general.cpython-39.pyc
+      │          loss.cpython-39.pyc
+      │          metrics.cpython-39.pyc
+      │          plots.cpython-39.pyc
+      │          torch_utils.cpython-39.pyc
+      │          __init__.cpython-39.pyc
+      │
+      └─__pycache__
+              export.cpython-39.pyc
+              val.cpython-39.pyc
+  ```
+
+</details>
