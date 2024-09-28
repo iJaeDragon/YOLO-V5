@@ -45,3 +45,8 @@
           best.pt # 최고 성능 가중치 파일
           last.pt # 최종 가중치 파일
 ```
+
+## 참고
+  https://docs.ultralytics.com/modes/train/#resuming-interrupted-trainings
+  
+  patience - epoch early stop 정리
