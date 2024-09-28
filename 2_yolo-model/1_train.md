@@ -30,6 +30,13 @@
   --name yolo_custom_mode # 실험 이름이며, 학습된 모델과 로그 파일이 저장될 디렉토리 이름이다.
 ```
 
+## 추가 파라미터
+
+```
+  --device # 사용 가능한 장치를 감지하여 GPU가 있을 경우 GPU를 사용하고, 그렇지 않으면 CPU를 사용
+  --patience # epoch early stop 에포크보다 낮게 설정하여 과대적합 방지
+```
+
 ## 결과
 
 ```
@@ -48,5 +55,3 @@
 
 ## 참고
   https://docs.ultralytics.com/modes/train/#resuming-interrupted-trainings
-  
-  patience - epoch early stop 정리
